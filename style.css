@@ -1,0 +1,22 @@
+* {
+  background-color: linen;
+  text-align: center;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  position: absolute;
+  right: 0;
+}
+nav ul {
+  list-style: none;
+}
+/* header {
+} */
+header h1 {
+  font-family: "Rubik Mono One", sans-serif;
+}
+header h2 {
+  font-family: "Yeseva One", cursive;
+}

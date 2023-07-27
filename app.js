@@ -1,4 +1,7 @@
 window.onload = (event) => {
+  
+  
+  // declare fetch() function
   const fetchImage = () => {
     const url = "https://api.thedogapi.com/v1/images/search";
 
@@ -19,26 +22,27 @@ window.onload = (event) => {
         (err) => console.log(err)
       );
   };
+  
 
-  // const fetchImage = () => {
-  //   fetch("https://api.thedogapi.com/v1/images/search", {
-  //     method: "get"
-  //   })
-  //     .then(response => response.json()
-  //     ).then(
-  //       (data) => {
-  //         let imagesData = data
-  //         let photoURL = data.url;
-  //         const imageElement = document.querySelector("#dog-pic");
-  //         imageElement.src = photoURL;
+  // function to toggle display of attributions
+  const toggleAttributions = () => {
+    let attrElem = document.querySelector("#attributions")
+    if (attrElem.style.display === "none") {
+      attrElem.style.display = "block";
+    } else {
+      attrElem.style.display = "none"
+    }
+  }
 
-  //         // const container = document.querySelector("#dog-pic");
-  //         // container.appendChild(imageElement);
-  //       },
-  //       (err) => console.log(err)
-  //     );
-  // };
 
+  // buttons declarations and function assignment
+  // pic button to randomize picture
   const picButton = document.querySelector("#pic-button");
   picButton.addEventListener("click", fetchImage);
+  // attributions button to toggle display of attributions
+  const attributionsButton = document.querySelector("#attributions-button");
+  attributionsButton.addEventListener("click", toggleAttributions)
+
+
+
 };

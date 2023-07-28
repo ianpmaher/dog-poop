@@ -13,8 +13,8 @@ nav ul {
   margin: 0;
 }
 header {
-  padding: 1rem;
-  background-color: aquamarine;
+  /* padding: 1rem; */
+  border: solid 2px aquamarine;
   font-family: "Yeseva One", cursive;
 }
 header img {
@@ -25,8 +25,24 @@ header img {
   flex-direction: column;
 }
 main {
-  padding-top: 5rem;
+  padding: 3rem 10rem;
+  border: 5px solid green;
+  font-family: "JetBrains Mono", monospace;
 }
 #attributions {
   display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+}
+#clockface {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  background-color: blue;
+  align-self: center;
+}
+#timer-numbers {
+  font-family: "JetBrains Mono", monospace;
 }

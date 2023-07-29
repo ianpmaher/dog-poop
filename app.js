@@ -103,26 +103,26 @@ window.onload = (event) => {
 };
 
 // modal test adapted from MDN page: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal
+// and from https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
+
+const modalElem = document.querySelector(".modal")
+// obscuring everything in background
+const fillerElem = document.querySelector(".filler")
 const modalButton = document.querySelector("#modal-button")
 const cancelButton = document.querySelector("#cancel")
-const modal = document.querySelector("#hidden")
 
-const openDialogCheck = (dialog) => {
-  if (dialog.open) {
-    console.log("dialog open")
-  } else {
-    console.log("dialog closed")
-  }
+const modalOpen = () => {
+  modalElem.classList.remove("hidden")
+  fillerElem.classList.remove("hidden")
 }
 
-// modal button opens modal
-modalButton.addEventListener("click", () => {
-  dialog.showModal()
-  openDialogCheck(dialog)
-})
+modalButton.addEventListener("click", modalOpen)
 
-// cancel button closes modal
-cancelButton.addEventListener("click", () => {
-  dialog.close()
-  openDialogCheck(dialog)
-})
+const closeModal = () => {
+  modalElem.classList.add("hidden")
+  fillerElem.classList.add("hidden")
+}
+
+cancelButton.addEventListener("click", closeModal)
+// to allow modal to close when clicked outside of it
+fillerElem.addEventListener("click", closeModal)

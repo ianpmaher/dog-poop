@@ -41,20 +41,17 @@
         <button id="timer-reset">Reset</button>
         <button id="timer-stop">Stop</button>
       </div>
-      <div id="modal-outer">
-        <div id="modal-inner">
+      <section class="modal hidden">
+        <div class="flex-container">
           <button id="pic-button" style="font-family: 'JetBrains Mono'">pics</button>
-          <div class="flex-container">
             <img id="dog-pic" src=""/>
-          </div>
           <button id="facts-button" style="font-family: 'JetBrains Mono'">Facts</button>
           <div id="dog-facts">facts</div>
           <button id="cancel" type="reset">no more dogs</button>
         </div>
-      </div>
-      <div>
-        <button id="modal-button">SHOW ME DOGS</button>
-      </div>
+      </section>
+      <div class="filler hidden"></div>
+      <button id="modal-button">SHOW ME DOGS</button>
     </main>
     <footer>
       <button id="attributions-button" style="font-family: 'JetBrains Mono'">Attributions</button>

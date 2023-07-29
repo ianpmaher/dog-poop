@@ -31,21 +31,30 @@
     <main>
       <div class="flex-container">
         <div id="clockface"></div>
-        <div id="timer-numbers">
-          <div id="minutes">25</div>
-          <div id="seconds">00</div>
-        </div>
+      </div>
+      <div id="timer-numbers">
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+      </div>
+      <div id="button-container">
         <button id="timer-button">Start</button>
         <button id="timer-reset">Reset</button>
+        <button id="timer-stop">Stop</button>
       </div>
-      <button id="pic-button" style="font-family: 'JetBrains Mono'">pics</button>
-      <img
-        id="dog-pic"
-        src=""
-        height="400px"
-        width="300px"/>
-      <button id="facts-button" style="font-family: 'JetBrains Mono'">Facts</button>
-      <div id="dog-facts">facts</div>
+      <div id="modal-outer">
+        <div id="modal-inner">
+          <button id="pic-button" style="font-family: 'JetBrains Mono'">pics</button>
+          <div class="flex-container">
+            <img id="dog-pic" src=""/>
+          </div>
+          <button id="facts-button" style="font-family: 'JetBrains Mono'">Facts</button>
+          <div id="dog-facts">facts</div>
+          <button id="cancel" type="reset">no more dogs</button>
+        </div>
+      </div>
+      <div>
+        <button id="modal-button">SHOW ME DOGS</button>
+      </div>
     </main>
     <footer>
       <button id="attributions-button" style="font-family: 'JetBrains Mono'">Attributions</button>

@@ -2,6 +2,10 @@
   background-color: linen;
   text-align: center;
 }
+body {
+  width: 99%;
+  height: 95vh;
+}
 nav {
   display: flex;
   flex-direction: row;
@@ -25,7 +29,7 @@ header img {
   flex-direction: column;
 }
 main {
-  padding: 3rem 10rem;
+  padding: 1rem;
   border: 5px solid green;
   font-family: "JetBrains Mono", monospace;
 }
@@ -37,12 +41,31 @@ main {
   font-family: "JetBrains Mono", monospace;
 }
 #clockface {
-  height: 20rem;
-  width: 20rem;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   background-color: blue;
   align-self: center;
 }
 #timer-numbers {
   font-family: "JetBrains Mono", monospace;
+  font-size: 25px;
+}
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#dog-pic {
+  max-width: 300px;
+  max-height: 300px;
+  align-self: center;
+}
+#hidden {
+  height: 90vh;
+  width: 90vh;
+  transition: opacity 0.2s;
+  /* opacity: 0;
+  pointer-events: none; */
 }

@@ -13,18 +13,13 @@
     />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
     <header>
       <div class="flex-container">
         <div class="row">
           <h1>Dog POOP</h1>
           <!-- <img src="https://cdn.pixabay.com/photo/2013/07/12/19/25/egg-timer-154763_1280.png" width="300px" height="362px"/> -->
           <h2>Pomodoro for Object-Oriented Programming</h2>
+          <span><a href="https://github.com/ianpmaher/dog-poop" target="_blank">github</a></span>
         </div>
       </div>
     </header>
@@ -36,17 +31,30 @@
         <span id="minutes"></span>
         <span id="seconds"></span>
       </div>
+      <input type="button" id="user-time-pom" value="25" class="user-time">
+      <input type="button" id="user-time-10" value="10" class="user-time">
+      <input type="button" id="user-time-5" value="5" class="user-time">
       <div id="button-container">
-        <button id="timer-button">Start</button>
         <button id="timer-reset">Reset</button>
         <button id="timer-stop">Stop</button>
       </div>
       <section class="modal hidden">
         <div class="flex-container">
           <button id="pic-button" style="font-family: 'JetBrains Mono'">pics</button>
-            <img id="dog-pic" src=""/>
-          <button id="facts-button" style="font-family: 'JetBrains Mono'">Facts</button>
-          <div id="dog-facts">facts</div>
+            <div class="flex-container" id="pic-container">
+              <img id="dog-pic1" class="dog-pic" src=""/>
+              <img id="dog-pic2" class="dog-pic" src=""/>
+              <img id="dog-pic3" class="dog-pic" src=""/>
+            </div>
+          <button id="fact-button" style="font-family: 'JetBrains Mono'">Facts</button>
+          <div id="dog-facts">
+            <p>Random breed facts!</p>
+            <p>breed: <span id="breed"></span></p>
+            <img id="example-pic" src=""></p>
+            <p>bred for purpose(s): <span id="purpose"></span></p>
+            <p>breed group: <span id="breed-group"></span></p>
+            <p>temperament: <span id="temperament"></span></p>
+          </div>
           <button id="cancel" type="reset">no more dogs</button>
         </div>
       </section>

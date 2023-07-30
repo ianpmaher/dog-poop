@@ -108,6 +108,8 @@ window.onload = (event) => {
     pomTimer();
   });
 
+  // IMPORTANT PARTS OF TIMER
+
   let pomInterval;
   let state = true;
 
@@ -136,7 +138,7 @@ window.onload = (event) => {
         } else {
           secElem.textContent = secondsLeft;
         }
-        minsElem.textContent = `${minutesLeft}`;
+        minsElem.textContent = `${minutesLeft}:`;
 
         if (minutesLeft === 0 && secondsLeft === 0) {
           clearInterval(pomInterval);
@@ -163,11 +165,7 @@ window.onload = (event) => {
   //   pomTimer(25);
   // });
 
-  // this seems to work, but with a DELAY. Not sure why the timer starts regardless of button
-  // button only seems to display the numbers since page loaded?
-
-  // I am adapting below to allow for buttons to work, I think issue is with scope
-
+  // ATTRIBUTIONS BUTTON - just to keep things on one page
   // function to toggle display of attributions
   const toggleAttributions = () => {
     let attrElem = document.querySelector("#attributions");
@@ -183,31 +181,51 @@ window.onload = (event) => {
   // attributions button to toggle display of attributions
   const attributionsButton = document.querySelector("#attributions-button");
   attributionsButton.addEventListener("click", toggleAttributions);
-};
 
-// modal test adapted from MDN page: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal
-// and from https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
+  // modal test adapted from MDN page: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal
+  // and from https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
 
-const modalElem = document.querySelector(".modal");
-// obscuring everything in background
-const fillerElem = document.querySelector(".filler");
-const modalButton = document.querySelector("#modal-button");
-const cancelButton = document.querySelector("#cancel");
+  const modalElem = document.querySelector(".modal");
+  // obscuring everything in background
+  const fillerElem = document.querySelector(".filler");
+  const modalButton = document.querySelector("#modal-button");
+  const cancelButton = document.querySelector("#cancel");
 
-const modalOpen = () => {
-  modalElem.classList.remove("hidden");
-  fillerElem.classList.remove("hidden");
-};
+  const modalOpen = () => {
+    modalElem.classList.remove("hidden");
+    fillerElem.classList.remove("hidden");
+    // disable modalOpen button while timer has not yet completed
+    // while (state = true) {
+    //   modalButton.setAttribute("disabled", true)
+    // }
+  };
 
-// test purposes, may leave in final version
-modalButton.addEventListener("click", modalOpen);
+  // test purposes, may leave in final version
+  modalButton.addEventListener("click", modalOpen);
 
-const closeModal = () => {
-  modalElem.classList.add("hidden");
-  fillerElem.classList.add("hidden");
-};
+  const closeModal = () => {
+    modalElem.classList.add("hidden");
+    fillerElem.classList.add("hidden");
+  };
 
-// cancel button will close modal
-cancelButton.addEventListener("click", closeModal);
-// to allow modal to close when clicked outside of it
-fillerElem.addEventListener("click", closeModal);
+  // cancel button will close modal
+  cancelButton.addEventListener("click", closeModal);
+  // to allow modal to close when clicked outside of it
+  fillerElem.addEventListener("click", closeModal);
+
+  // adding event listener for keydown event -- escape to close modal
+  // also going to add "r" key as refresh for more dogs!
+  // this adapted from MDN https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  window.addEventListener("keydown", (e) => {
+    if (e.defaultPrevented) {
+      return; // do nothing
+    } else if (e.key === "Escape") {
+      closeModal();
+    } else if (e.key === "r" || e.key === "R") {
+      fetchImage();
+      fetchFact();
+    }
+  });
+
+
+}; // THIS LINE IS THE END OF WINDOW ON LOAD FUNCTION WRAP  ***

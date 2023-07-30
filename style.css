@@ -42,6 +42,10 @@ header img {
 #timer-numbers {
   font-family: "JetBrains Mono", monospace;
   font-size: 3em;
+  color:seashell;
+  background-color: black;
+  width: fit-content;
+  align-self: center;
 }
 #button-container {
   display: flex;
@@ -70,14 +74,19 @@ button {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  gap: 0.5rem;
 }
 .modal {
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 1rem;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 97%;
   /* min-height: 200px; */
   /* min-width: 95%; */
   gap: 0.5rem;
@@ -107,7 +116,7 @@ button {
 #dog-facts {
   display: flex;
   flex-flow: column wrap;
-  flex: 2
+  flex-basis: auto;
 }
 #example-pic {
   max-width: 250px;
@@ -116,4 +125,16 @@ button {
 }
 #attributions-button {
   font-size: 1em;
+}
+
+/* ANIMATIONS */
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
 }

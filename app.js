@@ -15,7 +15,7 @@ window.onload = (event) => {
         (data) => {
           imagesData1 = data[0];
           imagesData2 = data[1];
-          imagesData3 = data[2]
+          imagesData3 = data[2];
           document.querySelector("#dog-pic1").src = imagesData1.url;
           document.querySelector("#dog-pic2").src = imagesData2.url;
           document.querySelector("#dog-pic3").src = imagesData3.url;
@@ -52,13 +52,13 @@ window.onload = (event) => {
           // for their dog breed json info, they have 264 breeds with unique id numbers (1-264)
           // this took me SO LONG to get right, but it makes sense to me now. I was getting errors
           // because I had filtered out entries without images, and my number of random elements was incorrect as a result
-          let randomBreed = Math.floor(Math.random() * data.length)
+          let randomBreed = Math.floor(Math.random() * data.length);
           arrBreedFacts = data;
           document.querySelector("#breed").textContent = String(arrBreedFacts[randomBreed]["name"]);
-          document.querySelector("#example-pic").setAttribute("src", arrBreedFacts[randomBreed].image.url)
-          document.querySelector("#purpose").textContent = String(arrBreedFacts[randomBreed]["bred_for"])
-          document.querySelector("#breed-group").textContent = String(arrBreedFacts[randomBreed]["breed_group"])
-          document.querySelector("#temperament").textContent = String(arrBreedFacts[randomBreed]["temperament"])
+          document.querySelector("#example-pic").setAttribute("src", arrBreedFacts[randomBreed].image.url);
+          document.querySelector("#purpose").textContent = String(arrBreedFacts[randomBreed]["bred_for"]);
+          document.querySelector("#breed-group").textContent = String(arrBreedFacts[randomBreed]["breed_group"]);
+          document.querySelector("#temperament").textContent = String(arrBreedFacts[randomBreed]["temperament"]);
 
           console.log(arrBreedFacts[randomBreed].name);
         },
@@ -70,7 +70,7 @@ window.onload = (event) => {
   fetchFact();
   // dog fact button to randomize breed
   const factButton = document.querySelector("#fact-button");
-  factButton.addEventListener("click", fetchFact)
+  factButton.addEventListener("click", fetchFact);
 
   // **** TIMER FUNCTION ****
   // went down rabbit hole based on apparent unreliability of JavaScript's timing functions
@@ -80,21 +80,31 @@ window.onload = (event) => {
   // https://www.sitepoint.com/creating-accurate-timers-in-javascript/
 
   // I found this to be the simpler way of constructing user buttons that will start the counter
-  const userTimeInputArr = [25, 10, 5];
+  const userTimeInputArr = [25, 10, 5, 0.25];
 
+  // user selects the 25 min button
   let userSelect25 = document.querySelector("#user-time-pom");
   userSelect25.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[0];
     pomTimer();
   });
+  // user selects the 10 min button
   let userSelect10 = document.querySelector("#user-time-10");
   userSelect10.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[1];
     pomTimer();
   });
+  // user selects the 5 min button
   let userSelect5 = document.querySelector("#user-time-5");
   userSelect5.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[2];
+    pomTimer();
+  });
+  // user selects the 1 min button
+  // demonstration purposes
+  let userSelect1 = document.querySelector("#user-time-1");
+  userSelect1.addEventListener("click", () => {
+    sessionAmount = userTimeInputArr[3];
     pomTimer();
   });
 
@@ -130,6 +140,7 @@ window.onload = (event) => {
 
         if (minutesLeft === 0 && secondsLeft === 0) {
           clearInterval(pomInterval);
+          modalOpen();
         }
       };
       pomInterval = setInterval(updateSeconds, 1000);
@@ -188,6 +199,7 @@ const modalOpen = () => {
   fillerElem.classList.remove("hidden");
 };
 
+// test purposes, may leave in final version
 modalButton.addEventListener("click", modalOpen);
 
 const closeModal = () => {
@@ -195,6 +207,7 @@ const closeModal = () => {
   fillerElem.classList.add("hidden");
 };
 
+// cancel button will close modal
 cancelButton.addEventListener("click", closeModal);
 // to allow modal to close when clicked outside of it
 fillerElem.addEventListener("click", closeModal);

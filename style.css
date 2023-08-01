@@ -2,25 +2,54 @@ body {
   width: 99vw;
   height: 99vh;
   text-align: center;
-  background-color: linen;
+  background-color: rgb(235, 210, 185);
 }
 main {
-  padding: 1rem;
-  border: 5px solid green;
-  font-family: "JetBrains Mono", monospace; 
-  background-image: url("assets/pom\ background\ turquoise.png");
-  background-size: 100%;
+  padding: 0rem;
+  font-family: "JetBrains Mono", monospace;
+  background-color: rgba(179, 196, 167);
+  /* max-width: 70%; */
+  /* margin: 0 auto; */
+  background-image: url(assets/deskStudy.jpg);
+  background-size: 80%;
   background-repeat: no-repeat;
-  background-position: top;
-
+  background-position: bottom;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.row {
+  flex-basis: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-pic {
+  flex-basis: 2;
+  flex-shrink: 3;
 }
 header {
   /* padding: 1rem; */
   font-family: "Yeseva One", cursive;
+  line-height: 0.6;
+  /* background-image: url("assets/dogTomatoSmaller.png");
+  background-size: cover;
+  
+  background-position: top; */
 }
-header img {
-  float: right;
+header h1 {
+  font-size: 2.99rem;
 }
+header h1::after {
+  content: "💩";
+}
+/* header img {
+  display: inline;
+  height: 1.875rem;
+  width: 1.875rem;
+} */
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -38,43 +67,46 @@ header img {
   border-radius: 50%;
   border: 0.3em solid gold;
   align-self: center;
+  margin-bottom: 0.5rem;
 }
 #timer-numbers {
   font-family: "JetBrains Mono", monospace;
-  font-size: 3em;
-  color:seashell;
+  font-size: 3rem;
+  color: seashell;
   background-color: black;
+  padding: 0.25rem;
   width: fit-content;
   align-self: center;
+}
+.user-time {
+  font-size: 1.5em;
+  padding: 1em;
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(245, 96, 47);
+  transition: font-size 0.75s, background-color 0.75s;
 }
 #button-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
   align-items: center;
   padding: 1rem;
 }
-.user-time {
-  font-size: 2em;
-  padding: 1em;
-  border-radius: 50%;
-  background-color: rgba(1, 200, 175, 0.7);
-}
 button {
-  font-size: 2em;
-  background-color: cadetblue;
+  font-size: 1.5em;
+  background-color: rgba(222, 159, 13, 1);
+  border-radius: 25%;
+  transition: font-size 0.75s , background-color 0.75s;
 }
-.dog-pic {
-  max-width: 300px;
-  max-height: 300px;
+button:hover {
+  background-color: rgba(197, 22, 5, 0.8);
+  font-size: 1.65rem;
 }
-#pic-container {
-  display: flex;
-  /* justify-content: space-around; */
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 0.5rem;
+.user-time:hover {
+  background-color: rgb(255, 225, 123);
+  font-size: 1.65rem;
 }
 .modal {
   position: absolute;
@@ -107,11 +139,23 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .hidden {
   display: none;
+}
+.dog-pic {
+  max-width: 280px;
+  max-height: 280px;
+}
+#pic-container {
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
 }
 #dog-facts {
   display: flex;
@@ -119,14 +163,17 @@ button {
   flex-basis: auto;
 }
 #example-pic {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 240px;
+  max-height: 240px;
   align-self: center;
 }
 #attributions-button {
   font-size: 1em;
+  margin-top: 1rem;
 }
-
+#attributions {
+  font-size: 0.75rem;
+}
 /* ANIMATIONS */
 @keyframes slidein {
   from {
@@ -136,5 +183,60 @@ button {
   to {
     margin-bottom: 0%;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    line-height: 0.8rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header h2 {
+    font-size: 1rem;
+  }
+  .dog-tomato {
+    width: 164px;
+    height: 94px;
+  }
+  main {
+    background-size: cover;
+    font-size: 0.9rem;
+  }
+  .dog-pic {
+    max-width: 190px;
+    max-height: 190px;
+  }
+  #pic-container {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.1rem;
+  }
+  #example-pic {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .dog-tomato {
+    width: 219px;
+    height: 125px;
+  }
+  header {
+    line-height: 0.9;
+  }
+  main {
+    padding: 0;
+    background-size: cover;
+  }
+  .dog-pic {
+    max-width: 240px;
+    max-height: 240px;
   }
 }

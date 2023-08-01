@@ -75,6 +75,7 @@ window.onload = (event) => {
   // **** TIMER FUNCTION ****
   // went down rabbit hole based on apparent unreliability of JavaScript's timing functions
   // decided to keep DRY and refrain from massive undertaking in order to rectify milliseconds
+  // if in the professional world or any major software to be deployed in teh real world, I would not measure time by .setInterval() methods
   // https://stackoverflow.com/questions/29971898/how-to-create-an-accurate-timer-in-javascript
   // in depth reading here: https://johnresig.com/blog/how-javascript-timers-work/
   // https://www.sitepoint.com/creating-accurate-timers-in-javascript/
@@ -82,43 +83,53 @@ window.onload = (event) => {
   // I found this to be the simpler way of constructing user buttons that will start the counter
   const userTimeInputArr = [25, 10, 5, 0.25];
 
+  // putting HTML element variables up here for control flow purposes
+  const minsElem = document.querySelector("#minutes");
+  minsElem.textContent = "00:";
+  const secElem = document.querySelector("#seconds");
+  secElem.textContent = "00";
+
   // user selects the 25 min button
   let userSelect25 = document.querySelector("#user-time-pom");
   userSelect25.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[0];
-    pomTimer();
+    minsElem.textContent = "25:";
+    secElem.textContent = "00";
+    clearInterval(pomInterval)
   });
   // user selects the 10 min button
   let userSelect10 = document.querySelector("#user-time-10");
   userSelect10.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[1];
-    pomTimer();
+    minsElem.textContent = "10:";
+    secElem.textContent = "00"
+    clearInterval(pomInterval)
   });
   // user selects the 5 min button
   let userSelect5 = document.querySelector("#user-time-5");
   userSelect5.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[2];
-    pomTimer();
+    minsElem.textContent = "05:";
+    secElem.textContent = "00"
+    clearInterval(pomInterval)
   });
-  // user selects the 1 min button
+  // user selects the 15 second button
   // demonstration purposes
   let userSelect1 = document.querySelector("#user-time-1");
   userSelect1.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[3];
-    pomTimer();
+    minsElem.textContent = "00:";
+    secElem.textContent = "15"
+    clearInterval(pomInterval)
   });
 
   // IMPORTANT PARTS OF TIMER
 
   let pomInterval;
-  let state = true;
-
-  const minsElem = document.querySelector("#minutes");
-  minsElem.textContent = "00";
-  const secElem = document.querySelector("#seconds");
-  secElem.textContent = "00";
+  let state;
 
   const pomTimer = () => {
+    state = true
     if (state) {
       state = false;
       let totalSeconds = sessionAmount * 60;
@@ -147,23 +158,25 @@ window.onload = (event) => {
       };
       pomInterval = setInterval(updateSeconds, 1000);
     } else {
-      console.log("already selected");
+      console.log("already selected")
     }
   };
 
-  const timerResetButtonElem = document.querySelector("#timer-reset");
-  timerResetButtonElem.addEventListener("click", () => {
+  const timerStartButtonElem = document.querySelector("#timer-start");
+  timerStartButtonElem.addEventListener("click", () => {
+    clearInterval(pomInterval)
+    state = false
+    pomTimer();
+  })
+
+  const timerRestartButtonElem = document.querySelector("#timer-restart");
+  timerRestartButtonElem.addEventListener("click", () => {
     clearInterval(pomInterval);
+    state = true; // leaving in this line for now
     minsElem.textContent = "00";
     secElem.textContent = "00";
     pomTimer();
   });
-
-  // const timerStopButtonElem = document.querySelector("#timer-stop");
-  // timerStopButtonElem.addEventListener("click", () => {
-  //   clearInterval(pomInterval);
-  //   pomTimer(25);
-  // });
 
   // ATTRIBUTIONS BUTTON - just to keep things on one page
   // function to toggle display of attributions

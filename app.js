@@ -1,7 +1,7 @@
 window.onload = (event) => {
   // declare fetch() function
   const fetchImage = () => {
-    const url = "https://api.thedogapi.com/v1/images/search?limit=3";
+    const url = "https://api.thedogapi.com/v1/images/search?limit=3&?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
 
     fetch(url, {
       headers: {
@@ -35,7 +35,7 @@ window.onload = (event) => {
   let arrBreedFacts = [];
 
   const fetchFact = () => {
-    const url = "https://api.thedogapi.com/v1/breeds";
+    const url = "https://api.thedogapi.com/v1/breeds?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
 
     fetch(url, {
       headers: {

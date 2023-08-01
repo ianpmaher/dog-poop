@@ -14,6 +14,7 @@ main {
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: bottom;
+  padding: 1rem 0rem 2rem 0rem;
 }
 .header-container {
   display: flex;
@@ -62,21 +63,25 @@ header h1::after {
   font-family: "JetBrains Mono", monospace;
 }
 #clockface {
-  height: 15rem;
+  height: 10rem;
   width: 15rem;
-  border-radius: 50%;
-  border: 0.3em solid gold;
+  border-radius: 10%;
   align-self: center;
   margin-bottom: 0.5rem;
+  background-color: rgb(247, 242, 234);
 }
 #timer-numbers {
   font-family: "JetBrains Mono", monospace;
-  font-size: 3rem;
+  font-size: 4rem;
   color: seashell;
   background-color: black;
   padding: 0.25rem;
-  width: fit-content;
-  align-self: center;
+  align-items:normal;
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 10%;
 }
 .user-time {
   font-size: 1.5em;
@@ -84,7 +89,8 @@ header h1::after {
   margin-top: 0.5rem;
   border-radius: 50%;
   background-color: rgba(245, 96, 47);
-  transition: font-size 0.75s, background-color 0.75s;
+  transition: scale 1s;
+  transition: background-color 0.75s;
 }
 #button-container {
   display: flex;
@@ -102,11 +108,11 @@ button {
 }
 button:hover {
   background-color: rgba(197, 22, 5, 0.8);
-  font-size: 1.65rem;
 }
 .user-time:hover {
   background-color: rgb(255, 225, 123);
-  font-size: 1.65rem;
+  /* font-size: 1.65rem; */
+  transform: scale(110%);
 }
 .modal {
   position: absolute;

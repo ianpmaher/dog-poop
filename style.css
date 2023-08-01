@@ -8,13 +8,14 @@ main {
   padding: 0rem;
   font-family: "JetBrains Mono", monospace;
   background-color: rgba(179, 196, 167);
-  /* max-width: 70%; */
-  /* margin: 0 auto; */
+  max-width: 90%;
+  /* max-height: 20rem; */
+  margin: 0 auto;
   background-image: url(assets/deskStudy.jpg);
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: bottom;
-  padding: 1rem 0rem 2rem 0rem;
+  padding: 3rem 0rem 3rem 0rem;
 }
 .header-container {
   display: flex;
@@ -59,37 +60,41 @@ header h1::after {
   display: none;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-family: "JetBrains Mono", monospace;
 }
 #clockface {
   height: 10rem;
   width: 15rem;
-  border-radius: 10%;
+  border-radius: 30%;
   align-self: center;
   margin-bottom: 0.5rem;
-  background-color: rgb(247, 242, 234);
+  align-items: center;
+  /* background-color: rgb(247, 242, 234); */
 }
 #timer-numbers {
   font-family: "JetBrains Mono", monospace;
-  font-size: 4rem;
+  font-size: 5rem;
   color: seashell;
   background-color: black;
-  padding: 0.25rem;
+  padding: 0.15rem;
   align-items:normal;
   /* justify-content: center; */
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 10%;
+  border: 0.1rem solid rgb(247, 242, 234);
+  border-radius: 20%;
+  margin-top: 1.5rem;
 }
 .user-time {
   font-size: 1.5em;
   padding: 1em;
   margin-top: 0.5rem;
   border-radius: 50%;
+  border: 2px solid rgba(203, 58, 45, 0.8);
   background-color: rgba(245, 96, 47);
-  transition: scale 1s;
+  transition: scale;
   transition: background-color 0.75s;
 }
 #button-container {
@@ -104,10 +109,11 @@ button {
   font-size: 1.5em;
   background-color: rgba(222, 159, 13, 1);
   border-radius: 25%;
-  transition: font-size 0.75s , background-color 0.75s;
+  transition: background-color 0.75s;
 }
 button:hover {
   background-color: rgba(197, 22, 5, 0.8);
+  transform: scale(110%);
 }
 .user-time:hover {
   background-color: rgb(255, 225, 123);
@@ -116,21 +122,20 @@ button:hover {
 }
 .modal {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: 1rem;
+  left: 10%;
+  right: 10%;
+  top: 5%;
+  bottom: 5%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* min-height: 200px; */
-  /* min-width: 95%; */
+  /* max-width: 95%; */
   gap: 0.5rem;
   transition: opacity 0.5s;
   background-color: paleturquoise;
-  top: 10%;
+  /* top: 6%; */
 }
 .modal .flex-container {
   justify-content: space-between;
@@ -161,7 +166,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 #dog-facts {
   display: flex;
@@ -172,6 +177,12 @@ button:hover {
   max-width: 240px;
   max-height: 240px;
   align-self: center;
+}
+.modal p {
+  font-size: 12px;
+}
+.modal button {
+  font-size: 14px;
 }
 #attributions-button {
   font-size: 1em;
@@ -192,7 +203,7 @@ button:hover {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   header {
     line-height: 0.8rem;
   }
@@ -211,8 +222,8 @@ button:hover {
     font-size: 0.9rem;
   }
   .dog-pic {
-    max-width: 190px;
-    max-height: 190px;
+    max-width: 160px;
+    max-height: 160px;
   }
   #pic-container {
     display: flex;
@@ -224,8 +235,11 @@ button:hover {
     gap: 0.1rem;
   }
   #example-pic {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 130px;
+    max-height: 130px;
+  }
+  .modal p {
+    font-size: 8px;
   }
 }
 
@@ -242,7 +256,10 @@ button:hover {
     background-size: cover;
   }
   .dog-pic {
-    max-width: 240px;
-    max-height: 240px;
+    max-width: 210px;
+    max-height: 210px;
+  }
+  .modal p {
+    font-size: 10px;
   }
 }

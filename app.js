@@ -208,9 +208,6 @@ window.onload = (event) => {
     modalElem.classList.remove("hidden");
     fillerElem.classList.remove("hidden");
     // disable modalOpen button while timer has not yet completed
-    // while (state = true) {
-    //   modalButton.setAttribute("disabled", true)
-    // }
   };
 
   // test purposes, may leave in final version

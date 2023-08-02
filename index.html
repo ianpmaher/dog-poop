@@ -16,7 +16,7 @@
     <header>
       <div class="header-container">
         <div class="row" class="header-pic">
-          <img src="assets/dogLefttomatoRight.png" alt="dogs and timer" class="dog-tomato"/>
+          <img src="assets/dogLefttomatoRight.png" alt="dogs and timer" class="dog-tomato" />
         </div>
         <div class="row">
           <h1>Dog P.O.O.P.</h1>
@@ -24,8 +24,16 @@
           <!-- <span><a href="https://github.com/ianpmaher/dog-poop" target="_blank"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"></a></span> -->
         </div>
         <div class="row" class="header-pic">
-          <img src="assets/dogRighttomatoLeft.png" alt="dogs and timer" class="dog-tomato"/>
+          <img src="assets/dogRighttomatoLeft.png" alt="dogs and timer" class="dog-tomato" />
         </div>
+      </div>
+      <button id="instructions-button">Instructions</button>
+      <div class="instructions-container hidden">
+        <p class="instructions-text" id="popup-instructions">
+          Work for 25 mins, then take a break for 5 minutes and learn about dogs before working for another 25 min
+          session.<br />
+          After 4 consecutive work intervals, take a 25 minute break!
+        </p>
       </div>
     </header>
     <main>
@@ -34,13 +42,13 @@
           <div id="timer-numbers">
             <span id="minutes"></span>
             <span id="seconds"></span>
-        </div>
+          </div>
         </div>
       </div>
-      <input type="button" id="user-time-pom" value="25 min" class="user-time">
-      <input type="button" id="user-time-10" value="10 min" class="user-time">
-      <input type="button" id="user-time-5" value="5 min" class="user-time">
-      <input type="button" id="user-time-1" value="15 sec" class="user-time">
+      <input type="button" id="user-time-pom" value="25 min" class="user-time" />
+      <input type="button" id="user-time-10" value="10 min" class="user-time" />
+      <input type="button" id="user-time-5" value="5 min" class="user-time" />
+      <input type="button" id="user-time-1" value="15 sec" class="user-time" />
       <div id="button-container">
         <button id="timer-start">Start</button>
         <button id="timer-restart">Restart</button>
@@ -50,16 +58,16 @@
           <button id="pic-button" style="font-family: 'JetBrains Mono'">pics</button>
           <p><strong>break time!</strong></p>
           <p>click or press "r" to refresh the doggos!</p>
-            <div class="flex-container" id="pic-container">
-              <img id="dog-pic1" class="dog-pic" src=""/>
-              <img id="dog-pic2" class="dog-pic" src=""/>
-              <img id="dog-pic3" class="dog-pic" src=""/>
-            </div>
+          <div class="flex-container" id="pic-container">
+            <img id="dog-pic1" class="dog-pic" src="" />
+            <img id="dog-pic2" class="dog-pic" src="" />
+            <img id="dog-pic3" class="dog-pic" src="" />
+          </div>
           <button id="fact-button" style="font-family: 'JetBrains Mono'">Facts</button>
           <div id="dog-facts">
             <span>Random breed facts!</span>
             <span>breed: <span id="breed"></span></span>
-            <img id="example-pic" src=""/>
+            <img id="example-pic" src="" />
             <span>bred for purpose(s): <span id="purpose"></span></span>
             <span>breed group: <span id="breed-group"></span></span>
             <span>temperament: <span id="temperament"></span></span>
@@ -75,8 +83,19 @@
       <button id="attributions-button" style="font-family: 'JetBrains Mono'">Attributions</button>
       <ul id="attributions">
         <li>Image by OpenClipart-Vectors from Pixabay</li>
-        <li>Image by <a href="https://www.freepik.com/free-photo/sandwich-coffee-cup-eyeglasses-spiral-notepad-pen-laptop-clipboard-with-budget-plan-blue-desk_4743294.htm">Freepik</a></li>
-        <li><a href="https://www.freepik.com/free-vector/illustration-dogs-collection_2800619.htm">Image by rawpixel.com</a> on Freepik</li>
+        <li>
+          Image by
+          <a
+            href="https://www.freepik.com/free-photo/sandwich-coffee-cup-eyeglasses-spiral-notepad-pen-laptop-clipboard-with-budget-plan-blue-desk_4743294.htm"
+            >Freepik</a
+          >
+        </li>
+        <li>
+          <a href="https://www.freepik.com/free-vector/illustration-dogs-collection_2800619.htm"
+            >Image by rawpixel.com</a
+          >
+          on Freepik
+        </li>
       </ul>
     </footer>
     <script type="text/javascript" src="app.js"></script>

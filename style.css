@@ -47,12 +47,42 @@ header h1 {
 header h1::after {
   content: "💩";
 }
+#instructions-button {
+  font-family: "JetBrains Mono", monospace;
+}
+.instructions-container {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+.instructions-text {
+  font-size: 1rem;
+  flex-direction: row;
+  background-color: rgba(179, 196, 167, 0.8);
+  margin: 0 auto;
+  line-height: 1;
+  width: fit-content;
+  z-index: 1;
+}
+.instructions-container .instructions-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 5px solid #555 transparent;
+}
+.instructions-container .show {
+  visibility: visible;
+  animation: fadeIn 1s;
+}
 .flex-container {
   display: flex;
   flex-direction: column;
 }
 #clockface {
-  height: 12rem;
+  height: 10rem;
   width: 15rem;
   border-radius: 30%;
   align-self: center;
@@ -95,6 +125,7 @@ header h1::after {
   padding: 1rem;
 }
 button {
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.5em;
   background-color: rgba(222, 159, 13, 1);
   border-radius: 25%;
@@ -135,6 +166,7 @@ button:active {
   justify-content: space-between;
   align-items: center;
   flex-flow: column wrap;
+  animation: fadeIn 1s;
 }
 .filler {
   /* width: 99%;
@@ -146,8 +178,8 @@ button:active {
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  /* transition: visibility 0.5s opacity 0.5s ease-in-out; */
 }
+/* HIDDEN */
 .hidden {
   visibility: hidden;
 }
@@ -200,6 +232,11 @@ button:active {
   to {
     transform: rotateX(360deg);
   }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @media only screen and (max-width: 700px) {

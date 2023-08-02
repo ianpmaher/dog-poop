@@ -1,7 +1,8 @@
 window.onload = (event) => {
   // declare fetch() function
   const fetchImage = () => {
-    const url = "https://api.thedogapi.com/v1/images/search?limit=3&?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
+    const url =
+      "https://api.thedogapi.com/v1/images/search?limit=3&?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
 
     fetch(url, {
       headers: {
@@ -35,7 +36,8 @@ window.onload = (event) => {
   let arrBreedFacts = [];
 
   const fetchFact = () => {
-    const url = "https://api.thedogapi.com/v1/breeds?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
+    const url =
+      "https://api.thedogapi.com/v1/breeds?api_key=live_HrMNIJaTAebFXphkPGrvAcwT6K4ojinQBHMbeK0H76tGbXd9at62d4tnrQNCuwFy";
 
     fetch(url, {
       headers: {
@@ -80,7 +82,7 @@ window.onload = (event) => {
   // in depth reading here: https://johnresig.com/blog/how-javascript-timers-work/
   // https://www.sitepoint.com/creating-accurate-timers-in-javascript/
 
-  // I found this to be the simpler way of constructing user buttons that will start the counter
+  // I found this to be the simpler way of constructing user buttons that will start the timer
   const userTimeInputArr = [25, 10, 5, 0.25];
 
   // putting HTML element variables up here for control flow purposes
@@ -95,26 +97,28 @@ window.onload = (event) => {
     sessionAmount = userTimeInputArr[0];
     minsElem.textContent = "25:";
     secElem.textContent = "00";
-    clearInterval(pomInterval)
-    secElem.classList.remove("sec-flip")
+    // reset the interval if user selects this during session
+    clearInterval(pomInterval);
+    // will make the sec-flip interval less of an issue if it is reset with each session
+    secElem.classList.remove("sec-flip");
   });
   // user selects the 10 min button
   let userSelect10 = document.querySelector("#user-time-10");
   userSelect10.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[1];
     minsElem.textContent = "10:";
-    secElem.textContent = "00"
-    clearInterval(pomInterval)
-    secElem.classList.remove("sec-flip")
+    secElem.textContent = "00";
+    clearInterval(pomInterval);
+    secElem.classList.remove("sec-flip");
   });
   // user selects the 5 min button
   let userSelect5 = document.querySelector("#user-time-5");
   userSelect5.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[2];
     minsElem.textContent = "05:";
-    secElem.textContent = "00"
-    clearInterval(pomInterval)
-    secElem.classList.remove("sec-flip")
+    secElem.textContent = "00";
+    clearInterval(pomInterval);
+    secElem.classList.remove("sec-flip");
   });
   // user selects the 15 second button
   // demonstration purposes
@@ -122,18 +126,19 @@ window.onload = (event) => {
   userSelect1.addEventListener("click", () => {
     sessionAmount = userTimeInputArr[3];
     minsElem.textContent = "00:";
-    secElem.textContent = "15"
-    clearInterval(pomInterval)
-    secElem.classList.remove("sec-flip")
+    secElem.textContent = "15";
+    clearInterval(pomInterval);
+    secElem.classList.remove("sec-flip");
   });
 
   // IMPORTANT PARTS OF TIMER
 
   let pomInterval;
+  // state variable's truthiness will prevent user from interfering with interval/timeout
   let state;
 
   const pomTimer = () => {
-    state = true
+    state = true;
     if (state) {
       state = false;
       let totalSeconds = sessionAmount * 60;
@@ -147,8 +152,7 @@ window.onload = (event) => {
 
         let minutesLeft = Math.floor(totalSeconds / 60);
         let secondsLeft = totalSeconds % 60;
-        secElem.classList.add("sec-flip")
-
+        secElem.classList.add("sec-flip");
 
         if (secondsLeft < 10) {
           secElem.textContent = "0" + secondsLeft;
@@ -159,22 +163,22 @@ window.onload = (event) => {
 
         if (minutesLeft === 0 && secondsLeft === 0) {
           clearInterval(pomInterval);
-          secElem.classList.remove("sec-flip")
+          secElem.classList.remove("sec-flip");
           modalOpen();
         }
       };
       pomInterval = setInterval(updateSeconds, 1000);
     } else {
-      console.log("already selected")
+      console.log("already selected");
     }
   };
 
   const timerStartButtonElem = document.querySelector("#timer-start");
   timerStartButtonElem.addEventListener("click", () => {
-    clearInterval(pomInterval)
-    state = false
+    clearInterval(pomInterval);
+    state = false;
     pomTimer();
-  })
+  });
 
   const timerRestartButtonElem = document.querySelector("#timer-restart");
   timerRestartButtonElem.addEventListener("click", () => {
@@ -184,6 +188,16 @@ window.onload = (event) => {
     secElem.textContent = "00";
     pomTimer();
   });
+ 
+  // Instructions button
+  const showPopUp = () => {
+    const popUp = document.querySelector(".instructions-container")
+    popUp.classList.toggle("hidden")
+  }
+
+  const instructionsButton = document.querySelector("#instructions-button")
+  instructionsButton.addEventListener("click", showPopUp)
+
 
   // ATTRIBUTIONS BUTTON - just to keep things on one page
   // function to toggle display of attributions
@@ -243,6 +257,4 @@ window.onload = (event) => {
       fetchFact();
     }
   });
-
-
 }; // THIS LINE IS THE END OF WINDOW ON LOAD FUNCTION WRAP  ***

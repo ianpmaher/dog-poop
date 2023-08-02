@@ -47,17 +47,12 @@ header h1 {
 header h1::after {
   content: "💩";
 }
-/* header img {
-  display: inline;
-  height: 1.875rem;
-  width: 1.875rem;
-} */
 .flex-container {
   display: flex;
   flex-direction: column;
 }
 #clockface {
-  height: 10rem;
+  height: 12rem;
   width: 15rem;
   border-radius: 30%;
   align-self: center;
@@ -79,6 +74,9 @@ header h1::after {
   border: 0.1rem solid rgb(247, 242, 234);
   border-radius: 20%;
   margin-top: 1.5rem;
+}
+.sec-flip {
+  animation: flip 1s cubic-bezier(0.1, 0.885, 0.320, 1.2) infinite both;
 }
 .user-time {
   font-size: 1.5em;
@@ -114,8 +112,6 @@ button:active {
   /* font-size: 1.65rem; */
   transform: scale(110%);
   color: rgb(122, 153, 255);
-}
-.user-time:active {
   transform: scale(120%);
 }
 .modal {
@@ -196,13 +192,13 @@ button:active {
   font-size: 0.75rem;
 }
 
-
-@keyframes rotate {
+/* shoutout to https://animista.net/play/basic/flip/flip-horizontal-bottom */
+@keyframes flip {
   from {
-    transform: rotate(0deg);
+    transform: rotateX(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateX(360deg);
   }
 }
 

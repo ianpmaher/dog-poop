@@ -150,9 +150,11 @@ window.onload = (event) => {
           secElem.textContent = secondsLeft;
         }
         minsElem.textContent = `${minutesLeft}:`;
+        secElem.classList.add("sec-flip")
 
         if (minutesLeft === 0 && secondsLeft === 0) {
           clearInterval(pomInterval);
+          secElem.classList.remove("sec-flip")
           modalOpen();
         }
       };

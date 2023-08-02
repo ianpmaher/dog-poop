@@ -255,8 +255,8 @@ button:active {
     font-size: 1rem;
   }
   .dog-tomato {
-    width: 164px;
-    height: 94px;
+    width: 80px;
+    height: 50px;
   }
   main {
     background-size: cover;
@@ -276,18 +276,21 @@ button:active {
     gap: 0.1rem;
   }
   #example-pic {
-    max-width: 130px;
-    max-height: 130px;
+    max-width: 100px;
+    max-height: 100px;
   }
   .modal p {
+    font-size: 8px;
+  }
+  #dog-facts {
     font-size: 8px;
   }
 }
 
 @media only screen and (max-width: 999px) {
   .dog-tomato {
-    width: 219px;
-    height: 125px;
+    width: 150px;
+    height: 100px;
   }
   header {
     line-height: 0.9;
@@ -301,6 +304,6 @@ button:active {
     max-height: 210px;
   }
   .modal p {
-    font-size: 10px;
+    font-size: 12px;
   }
 }

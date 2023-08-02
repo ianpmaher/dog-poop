@@ -11,4 +11,10 @@ Technologies used:
 * I used **HTML**, **CSS**, and **JavaScript** (with the **Fetch API**) to create my site. 
 * I used CSS to stylize the website for mobile, tablet, and desktop usage, with *mobile responsiveness* thanks largely to the wonder of **FlexBox**. 
 * I used Fetch to refresh (and allow the user to refresh) the dog facts and pictures that greet the user. For this, I used the [TheDogAPI](https://www.thedogapi.com/). 
-* I 
+* I used a combination of CSS and JavaScript to enable the modal functionality without utilizing the :modal pseudo-class or dialog box of HTML.
+* I utilized only Vanilla JavaScript for functionality.
+
+Room for Improvement: 
+* Improve the visual flair of the website. I wanted to keep it simple visually, so I tried to avoid making the layout too busy. 
+* However, the CSS animation to flip the seconds element does add quite a bit, and having some other animated elements would be great to add in the future. 
+* On learning more JavaScript techniques, I would also love to add more of a flow to the timers, with the user being prompted to take a break with the defaulting to the 5 min timer, for example. 

@@ -17,4 +17,6 @@ Technologies used:
 Room for Improvement: 
 * Improve the visual flair of the website. I wanted to keep it simple visually, so I tried to avoid making the layout too busy. 
 * However, the CSS animation to flip the seconds element does add quite a bit, and having some other animated elements would be great to add in the future. 
-* On learning more JavaScript techniques, I would also love to add more of a flow to the timers, with the user being prompted to take a break with the defaulting to the 5 min timer, for example. 
+* On learning more JavaScript techniques, I would also love to add more of a flow to the timers, with the user being prompted to take a break with the defaulting to the 5 min timer, for example.
+
+<img width="1512" alt="image" src="https://github.com/ianpmaher/dog-poop/assets/120536234/0a5d3467-5e7a-44c5-aec8-a6cad3fbb8f4">

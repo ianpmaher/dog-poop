@@ -164,6 +164,7 @@ button:active {
   background-color: paleturquoise;
   /* top: 6%; */
   /* transition: visibility 2.5s transform 0.5s ease-in-out; */
+  line-height: 1;
 }
 .modal .flex-container {
   justify-content: space-between;
@@ -210,6 +211,7 @@ button:active {
 }
 .modal p {
   font-size: 12px;
+  line-height: 0.5;
 }
 .modal button {
   font-size: 14px;

@@ -56,13 +56,6 @@ header h1::after {
   display: flex;
   flex-direction: column;
 }
-#attributions {
-  display: none;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  font-family: "JetBrains Mono", monospace;
-}
 #clockface {
   height: 10rem;
   width: 15rem;
@@ -94,8 +87,6 @@ header h1::after {
   border-radius: 50%;
   border: 2px solid rgba(203, 58, 45, 0.8);
   background-color: rgba(245, 96, 47);
-  transition: scale;
-  transition: background-color 0.75s;
 }
 #button-container {
   display: flex;
@@ -109,16 +100,23 @@ button {
   font-size: 1.5em;
   background-color: rgba(222, 159, 13, 1);
   border-radius: 25%;
-  transition: background-color 0.75s;
 }
 button:hover {
+  transform: scale(105%);
+  color: white;
+}
+button:active {
   background-color: rgba(197, 22, 5, 0.8);
-  transform: scale(110%);
+  transform: scale(120%);
 }
 .user-time:hover {
   background-color: rgb(255, 225, 123);
   /* font-size: 1.65rem; */
   transform: scale(110%);
+  color: rgb(122, 153, 255);
+}
+.user-time:active {
+  transform: scale(120%);
 }
 .modal {
   position: absolute;
@@ -133,9 +131,9 @@ button:hover {
   /* min-height: 200px; */
   /* max-width: 95%; */
   gap: 0.5rem;
-  transition: opacity 0.5s;
   background-color: paleturquoise;
   /* top: 6%; */
+  /* transition: visibility 2.5s transform 0.5s ease-in-out; */
 }
 .modal .flex-container {
   justify-content: space-between;
@@ -152,9 +150,10 @@ button:hover {
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
+  /* transition: visibility 0.5s opacity 0.5s ease-in-out; */
 }
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 .dog-pic {
   max-width: 280px;
@@ -189,17 +188,21 @@ button:hover {
   margin-top: 1rem;
 }
 #attributions {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;
 }
-/* ANIMATIONS */
-@keyframes slidein {
+
+
+@keyframes rotate {
   from {
-    margin-left: 100%;
-    width: 300%;
+    transform: rotate(0deg);
   }
   to {
-    margin-bottom: 0%;
-    width: 100%;
+    transform: rotate(360deg);
   }
 }
 

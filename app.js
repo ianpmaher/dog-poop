@@ -96,6 +96,7 @@ window.onload = (event) => {
     minsElem.textContent = "25:";
     secElem.textContent = "00";
     clearInterval(pomInterval)
+    secElem.classList.remove("sec-flip")
   });
   // user selects the 10 min button
   let userSelect10 = document.querySelector("#user-time-10");
@@ -104,6 +105,7 @@ window.onload = (event) => {
     minsElem.textContent = "10:";
     secElem.textContent = "00"
     clearInterval(pomInterval)
+    secElem.classList.remove("sec-flip")
   });
   // user selects the 5 min button
   let userSelect5 = document.querySelector("#user-time-5");
@@ -112,6 +114,7 @@ window.onload = (event) => {
     minsElem.textContent = "05:";
     secElem.textContent = "00"
     clearInterval(pomInterval)
+    secElem.classList.remove("sec-flip")
   });
   // user selects the 15 second button
   // demonstration purposes
@@ -121,6 +124,7 @@ window.onload = (event) => {
     minsElem.textContent = "00:";
     secElem.textContent = "15"
     clearInterval(pomInterval)
+    secElem.classList.remove("sec-flip")
   });
 
   // IMPORTANT PARTS OF TIMER
@@ -143,6 +147,8 @@ window.onload = (event) => {
 
         let minutesLeft = Math.floor(totalSeconds / 60);
         let secondsLeft = totalSeconds % 60;
+        secElem.classList.add("sec-flip")
+
 
         if (secondsLeft < 10) {
           secElem.textContent = "0" + secondsLeft;
@@ -150,7 +156,6 @@ window.onload = (event) => {
           secElem.textContent = secondsLeft;
         }
         minsElem.textContent = `${minutesLeft}:`;
-        secElem.classList.add("sec-flip")
 
         if (minutesLeft === 0 && secondsLeft === 0) {
           clearInterval(pomInterval);

@@ -49,6 +49,8 @@ header h1::after {
 }
 #instructions-button {
   font-family: "JetBrains Mono", monospace;
+  font-size:0.8rem;
+  margin: 0 auto;
 }
 .instructions-container {
   align-items: center;
@@ -58,7 +60,7 @@ header h1::after {
   text-align: center;
 }
 .instructions-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
   flex-direction: row;
   background-color: rgba(179, 196, 167, 0.8);
   margin: 0 auto;
@@ -86,6 +88,7 @@ header h1::after {
   width: 15rem;
   border-radius: 30%;
   align-self: center;
+  margin-top: -1rem;
   margin-bottom: 0.5rem;
   align-items: center;
   /* background-color: rgb(247, 242, 234); */

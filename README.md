@@ -20,3 +20,9 @@ Room for Improvement:
 * On learning more JavaScript techniques, I would also love to add more of a flow to the timers, with the user being prompted to take a break with the defaulting to the 5 min timer, for example.
 
 <img width="1512" alt="image" src="https://github.com/ianpmaher/dog-poop/assets/120536234/0a5d3467-5e7a-44c5-aec8-a6cad3fbb8f4">
+
+# Installation
+* Feel free to clone this repo! The JavaScript and CSS files are linked to the HTML file and can be loaded up like any other website locally.
+
+# Wireframe & Design Process
+![image](https://github.com/ianpmaher/dog-poop/assets/120536234/27562cc9-7760-4fe4-8625-23994fc6d073)

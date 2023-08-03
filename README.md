@@ -1,7 +1,9 @@
 # dog-poop
 A sleek Pomodoro Technique web app for the modern dog-person.
 
-Functional deployment: [https://dog-pomodoro.netlify.app/](https://dog-pomodoro.netlify.app/)
+Do you need some extra motivation to be more productive? Use this timer app and, when the session is complete, feast your eyes on some pup pics and dog data.
+
+**Functional deployment: [https://dog-pomodoro.netlify.app/](https://dog-pomodoro.netlify.app/)**
 
 * I set out to create a functional web application to assist in productivity. I am employing a basic version of the [Pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), with 25-minute "work" sessions separated by five-minute "break" sessions.
 
@@ -18,6 +20,7 @@ Room for Improvement:
 * Improve the visual flair of the website. I wanted to keep it simple visually, so I tried to avoid making the layout too busy. 
 * However, the CSS animation to flip the seconds element does add quite a bit, and having some other animated elements would be great to add in the future. 
 * On learning more JavaScript techniques, I would also love to add more of a flow to the timers, with the user being prompted to take a break with the defaulting to the 5 min timer, for example.
+* I would love to have a soft chime or user-customizable sound play when a Pomodoro session is complete. 
 
 <img width="1512" alt="image" src="https://github.com/ianpmaher/dog-poop/assets/120536234/0a5d3467-5e7a-44c5-aec8-a6cad3fbb8f4">
 
